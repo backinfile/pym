@@ -1,0 +1,21 @@
+fab = function() {
+    value = [1,1];
+    size = len(value);
+    function get(pos) {
+        pos -= 1;
+        if (pos < 0) {
+            return -1;
+        } else if (pos < size) {
+            return value[pos];
+        } else {
+            while (pos >= size) {
+                value += [value[size-1]+value[size-2]];
+                size += 1;
+            }
+            return value[pos];
+        }
+    }
+};
+fab();
+print fab.get(10);
+print fab.get(20);
